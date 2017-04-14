@@ -1,0 +1,29 @@
+/* variables */
+@bg_color: #2B1719;
+@font_color_green: #78AE62;
+@font_color_green_lighter: #8bba78;
+@font_color_gray: #888;
+
+.navbar-default {
+  border-radius: 0px;
+  border: none;
+  background: @bg_color;
+  .navbar-brand {
+    color: @font_color_green;
+
+  }
+  .navbar-brand:hover,.navbar-brand:active,.navbar-brand:focus,.navbar-brand:visited {
+    color: @font_color_green_lighter;
+  }
+  .navbar-right {
+    li {
+      a {
+        color: @font_color_gray;
+      }
+      a:hover, a:focus, a:active {
+        color: @font_color_green;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,84 @@
+<div id="books_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="h2">
+                    Catalogue of books
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="sterowanie_tabeli">
+            <div class="col-md-4 col-md-offset-4">
+                <div id="sortuj_ksiazki">
+                    <div class="input-group">
+                        <span class="input-group-addon glyphicon glyphicon-sort" id="sortowanie_ksiazki"></span>
+                        <select class="form-control" aria-describedby="sortowanie_ksiazki" ng-model="sortBooks">
+                            <option value="bookId">Number</option>
+                            <option value="title">Title</option>
+                            <option value="authors">Authors</option>
+                            <option value="numberIsbn">ISBN</option>
+                            <option value="status">Status</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="szukaj_ksiazki">
+                    <div class="input-group">
+                        <span class="input-group-addon glyphicon glyphicon-search" id="szukanie_ksiazki"></span>
+                        <input type="text" class="form-control" placeholder="Search..." ng-model="searchBooks" aria-describedby="szukanie_ksiazki">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <table class="table table-responsive">
+                    <thead>
+                    <tr>
+                        <td>Title</td>
+                        <td>Authors</td>
+                        <td>ISBN</td>
+                        <td>Status</td>
+                        <td align="center">Action</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="book in vm.books | orderBy: sortBooks | filter: searchBooks">
+                        <td>{{book.title}}</td>
+                        <td>{{book.authors}}</td>
+                        <td>{{book.numberIsbn}}</td>
+                        <td ng-class="{
+                        'text-success':book.status=='available',
+                        'text-warning':book.status=='waiting',
+                        'text-danger':book.status=='reserved',
+                        }">{{book.status}}</td>
+
+                        <td align="center">
+                            <button class="btn btn-xs btn-success" ng-show="book.status=='available'" ng-click="vm.reservedBook(book.bookId)">
+                                Get book
+                            </button>
+                            <button class="btn btn-xs btn-default disabled" ng-show="book.status!='available'">
+                                Get book
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <nav aria-label="...">
+                    <ul class="pager">
+                        <li class="previous"><a href="/#/books" ng-click="vm.page_decrement()"><span aria-hidden="true">&larr;</span> Previous
+                            </a></li>
+                        <li class="next"><a href="/#/books" ng-click="vm.page_increment()">Next <span aria-hidden="true">&rarr;</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

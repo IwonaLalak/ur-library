@@ -1,0 +1,57 @@
+@brown: #2B1719;
+@green: #78AE62;
+@font_main_color:#222;
+
+#home{
+  margin:50px 0;
+  color:@font_main_color;
+  .container{
+    background: #fff;
+    border:1px solid #ddd;
+    border-radius: 4px;
+  }
+  .badge{
+    background: @green;
+  }
+  .autor_name{
+    font-size: 9px;
+    color:#777;
+    text-align: right;
+    a{
+      color:#999;
+    }
+    a:hover,a:focus,a:active{
+      color:@green;
+      text-decoration: none;
+    }
+  }
+  .news_text{
+    margin-top:8px;
+    text-align: justify;
+    .more_info{
+      font-size:9px;
+      margin-top:5px;
+      color:#777;
+      float:right;
+    }
+    .more_info:hover{
+      text-decoration: none;
+      color:@green;
+    }
+  }
+
+  table{
+    thead{
+      font-weight:bold;
+    }
+    .wypozyczona_do{
+      font-size:9px;
+      color:#999;
+      margin-left:5px;
+      font-style: italic;
+    }
+    .btn{
+      min-width:60%;
+    }
+  }
+}

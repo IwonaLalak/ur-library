@@ -1,0 +1,22 @@
+@import url("navbar/navbar.css");
+@import url("footer/footer.css");
+@import url("login/login.css");
+@import url("home/home.css");
+@import url("books/books.css");
+@import url("register/register.css");
+@import url("profile/profile.css");
+@import url("panel/panel.css");
+@import url("users/users.css");
+@import url("user/user.css");
+@import url("suggest/suggest.css");
+
+body {
+  margin: 0;
+  background:url("../images/bg.jpg");
+  background-size: 50%;
+}
+.container{
+  padding-bottom:20px;
+}
+
+

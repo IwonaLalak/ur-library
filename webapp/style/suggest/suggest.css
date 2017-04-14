@@ -1,0 +1,23 @@
+#suggest_page {
+  margin: 50px 0;
+  color: #222222;
+}
+#suggest_page .container {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#suggest_page .btn-green {
+  border-color: #588745;
+  background: #78ae62;
+  color: #fff;
+}
+#suggest_page .btn-green:hover,
+#suggest_page .btn-green:focus,
+#suggest_page .btn-green:active {
+  border-color: #4d763d;
+  background: #588745;
+}
+#suggest_page #book_add_warning {
+  margin-bottom: 20px;
+}

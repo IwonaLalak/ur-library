@@ -1,0 +1,34 @@
+<div id="users_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="h2">
+                    Users
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Nick</td>
+                        <td>Group</td>
+                        <td>See profile</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="user in vm.users">
+                        <td>{{user.id}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.roles[0]}}</td>
+                        <td>
+                            <!--<button class="btn btn-primary btn-sm" ng-click="vm.goToUserProfile(user.id)">Odwiedź</button>-->
+                            <a ng-href="#/user/{{user.id}}" class="btn btn-primary btn-sm">Visit</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

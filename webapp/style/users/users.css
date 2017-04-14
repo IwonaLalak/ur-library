@@ -1,0 +1,9 @@
+#users_page {
+  margin: 50px 0;
+  color: #222222;
+}
+#users_page .container {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

@@ -1,0 +1,55 @@
+@brown: #2B1719;
+@green: #78AE62;
+@font_main_color: #222;
+
+#books_page {
+  margin: 50px 0;
+  color: @font_main_color;
+  .container {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  #sterowanie_tabeli {
+    margin: 10px 0;
+
+    #szukaj_ksiazki, #sortuj_ksiazki {
+      input:focus,select:focus {
+        border-color: @green;
+      }
+      .glyphicon {
+        top: 0;
+      }
+
+    }
+  }
+
+  table {
+    thead {
+      font-weight: bold;
+    }
+    .wypozyczona_do {
+      font-size: 9px;
+      color: #999;
+      margin-left: 5px;
+      font-style: italic;
+    }
+    .btn {
+      min-width: 60%;
+    }
+  }
+  .pager {
+    li {
+      a {
+        color: @green;
+      }
+
+    }
+    li.disabled {
+      a {
+        color: #aaa;
+      }
+    }
+  }
+}

@@ -1,0 +1,242 @@
+<div id="panel_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="h2">
+                    Admin Panel
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="h4">
+                    Accept user's suggest
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="well well-sm">
+                    <div class="row" id="list_of_all_waiting">
+                        <div class="col-md-12">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>Title</td>
+                                    <td>Authors</td>
+                                    <td>ISBN</td>
+                                    <td>URL</td>
+                                    <td>Accept</td>
+                                    <td>Reject</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="book in vm.waitingBooks">
+                                    <td>{{book.bookId}}</td>
+                                    <td>{{book.title}}</td>
+                                    <td>{{book.authors}}</td>
+                                    <td>{{book.numberIsbn}}</td>
+                                    <td>
+                                        <a target="_blank" href="https://books.google.pl/books?isbn={{book.numberIsbn}}"
+                                           class="btn btn-default btn-sm">See URL</a>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-green btn-sm"
+                                                ng-click="vm.acceptUserSuggest(book.bookId)">Accept
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm"
+                                                ng-click="vm.rejectUserSuggest(book.bookId)">Reject
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="h4">
+                    Change book's status
+                </div>
+            </div>
+            <div class="col-md-9">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-2 col-md-offset-1">
+                            <label>
+                                ID number:
+                            </label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="number" class="form-control" ng-model="edit_id"/>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-control" ng-model="edit_status">
+                                <option value="available">
+                                    avalible
+                                </option>
+                                <option value="accepted">
+                                    accepted
+                                </option>
+                                <option value="nonAccepted">
+                                    not accepted
+                                </option>
+                                <option value="waiting">
+                                    waiting
+                                </option>
+                                <option value="reserved">
+                                    reserved
+                                </option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-green btn-block" ng-click="vm.changeBookStatus(edit_id,edit_status)">Edit status</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="h4">
+                    Book's return
+                </div>
+            </div>
+            <div class="col-md-9">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-2 col-md-offset-1">
+                            <label>
+                                ID number:
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" class="form-control" ng-model="bookBack_id"/>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-green btn-block" ng-click="vm.giveBookBack(bookBack_id)">Accept</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="h4">
+                    Show all books
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-9">
+                        <button class="btn btn-green btn-block" data-toggle="collapse" data-target="#collapseAllBooks"
+                                aria-expanded="false" aria-controls="collapseAllBooks">Show list
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 collapse" id="collapseAllBooks">
+                <div class="well well-sm">
+                    <div class="row">
+                        <div class="col-md-12" id="szukanie_ksiazki">
+                            <div class="input-group">
+                                <span class="input-group-addon glyphicon glyphicon-search"
+                                      id="szukanie_ksiazki_icon"></span>
+                                <input type="text" class="form-control" placeholder="Search..."
+                                       aria-describedby="szukanie_ksiazki" ng-model="searchParticularBook">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="list_of_all_books">
+                        <div class="col-md-12">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>Title</td>
+                                    <td>Authors</td>
+                                    <td>ISBN</td>
+                                    <td>Status</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="book in vm.allBooks | orderBy: 'bookId' | filter: searchParticularBook">
+                                    <td>{{book.bookId}}</td>
+                                    <td>{{book.title}}</td>
+                                    <td>{{book.authors}}</td>
+                                    <td>{{book.numberIsbn}}</td>
+                                    <td ng-class="{
+                                        'text-success':book.status=='available',
+                                        'text-warning':book.status=='waiting',
+                                        'text-danger':book.status=='reserved',
+                                        }">
+                                        {{book.status}}
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="h4">
+                    Ban user
+                </div>
+            </div>
+            <div class="col-md-9">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-2 col-md-offset-1">
+                            <label>
+                                ID number:
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" class="form-control" ng-model="ban_id"/>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-danger btn-block" ng-click="vm.banUser(ban_id)">Ban</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--<div class="row">
+            <div class="col-md-3">
+                <div class="h4">
+                    Odbanuj użytkownika
+                </div>
+            </div>
+            <div class="col-md-9">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-2 col-md-offset-1">
+                            <label>
+                                Numer ID:
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" class="form-control" ng-model="unban_id"/>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-warning btn-block" ng-click="vm.unbanUser(unban_id)">Odbanuj użytkownika</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>-->
+    </div>
+</div>

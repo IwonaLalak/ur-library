@@ -1,0 +1,37 @@
+#user_page {
+  margin: 50px 0;
+  color: #222222;
+}
+#user_page .container {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#user_page .user_name,
+#user_page .user_settings_btn {
+  margin-top: 15vh;
+}
+#user_page .user_name .h3,
+#user_page .user_settings_btn .h3 {
+  margin: 0;
+  color: #78ae62;
+  text-shadow: 1px 1px 5px lightgray;
+}
+@media screen and (max-width: 630px) {
+  #user_page .user_name,
+  #user_page .user_settings_btn {
+    margin-top: 10vh;
+  }
+}
+@media screen and (max-width: 500px) {
+  #user_page .user_name,
+  #user_page .user_settings_btn {
+    margin-top: 5vh;
+  }
+}
+@media screen and (max-width: 370px) {
+  #user_page .user_name,
+  #user_page .user_settings_btn {
+    margin-top: 2vh;
+  }
+}

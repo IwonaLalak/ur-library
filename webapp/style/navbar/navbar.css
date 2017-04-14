@@ -1,0 +1,23 @@
+/* variables */
+.navbar-default {
+  border-radius: 0px;
+  border: none;
+  background: #2b1719;
+}
+.navbar-default .navbar-brand {
+  color: #78ae62;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:active,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:visited {
+  color: #8bba78;
+}
+.navbar-default .navbar-right li a {
+  color: #888888;
+}
+.navbar-default .navbar-right li a:hover,
+.navbar-default .navbar-right li a:focus,
+.navbar-default .navbar-right li a:active {
+  color: #78ae62;
+}

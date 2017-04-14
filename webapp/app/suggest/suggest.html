@@ -1,0 +1,92 @@
+<div id="suggest_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="h2">
+                    Suggest new book
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-3">
+                            <label>
+                                ISBN number:
+                            </label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" ng-model="isbn_number"/>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-green btn-block" ng-click="vm.addNewBook(isbn_number)">
+                                Add suggest
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-12" ng-hide="vm.added||!vm.clicked">
+                <div class="alert alert-danger">
+                    Error. Book not found
+                </div>
+            </div>
+            <div class="col-md-12" ng-show="vm.added">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-success">
+                        Success. Your suggestion:
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                ID:
+                            </div>
+                            <div class="col-md-8">
+                                {{vm.book.bookId}}
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                Title:
+                            </div>
+                            <div class="col-md-8">
+                                {{vm.book.title}}
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                Authors
+                            </div>
+                            <div class="col-md-8">
+                                {{vm.book.authors}}
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                ISBN:
+                            </div>
+                            <div class="col-md-8">
+                                {{vm.book.numberIsbn}}
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="col-md-12" id="book_add_warning">
+                   <span class="text-warning">
+                       <small>
+                           The book must be accepted by admin
+                       </small>
+                   </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<div id="user_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="h2">
+                    User's profile
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 col-xs-3">
+                <div class="thumbnail">
+                    <img src="../../images/default_avatar.jpg" class="img-responsive"/>
+                </div>
+            </div>
+            <div class="col-md-9 col-xs-7">
+                <div class="user_name">
+                    <div class="h3">
+                        {{vm.username}}
+                    </div>
+                </div>
+            </div>
+        </div><!--
+        <div class="row">
+            <div class="col-md-12">
+                <div class="h4">
+                    Obecnie wypożyczne
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-responsive">
+                    <thead>
+                    <tr>
+                        <td>Tytuł</td>
+                        <td>Autorzy</td>
+                        <td>ISBN</td>
+                        <td>Do kiedy</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="info in vm.readedBooks">
+                        <td>{{info.book[title]}}</td>
+                        <td>{{info.book[authors]}}</td>
+                        <td>{{info.book[numberIsbn]}}</td>
+                        <td>{{info.endDate}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="h4">
+                    Borrowed books
+                </div>
+            </div>
+            <div class="col-md-12" ng-hide="vm.allBooks.length==0">
+                <table class="table table-responsive">
+                    <thead>
+                    <tr>
+                        <td>Title</td>
+                        <td>Authors</td>
+                        <td>ISBN</td>
+                        <td>When</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="rec in vm.allBooks">
+                        <td>{{rec.book['title']}}</td>
+                        <td>{{rec.book['authors']}}</td>
+                        <td>{{rec.book['numberIsbn']}}</td>
+                        <td>{{rec.endDate}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12" ng-show="vm.allBooks.length==0">
+                <span class="text-warning">
+                    This user hasn't borrow anything yet
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

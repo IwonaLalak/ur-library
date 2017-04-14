@@ -1,0 +1,52 @@
+#home {
+  margin: 50px 0;
+  color: #222222;
+}
+#home .container {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#home .badge {
+  background: #78ae62;
+}
+#home .autor_name {
+  font-size: 9px;
+  color: #777;
+  text-align: right;
+}
+#home .autor_name a {
+  color: #999;
+}
+#home .autor_name a:hover,
+#home .autor_name a:focus,
+#home .autor_name a:active {
+  color: #78ae62;
+  text-decoration: none;
+}
+#home .news_text {
+  margin-top: 8px;
+  text-align: justify;
+}
+#home .news_text .more_info {
+  font-size: 9px;
+  margin-top: 5px;
+  color: #777;
+  float: right;
+}
+#home .news_text .more_info:hover {
+  text-decoration: none;
+  color: #78ae62;
+}
+#home table thead {
+  font-weight: bold;
+}
+#home table .wypozyczona_do {
+  font-size: 9px;
+  color: #999;
+  margin-left: 5px;
+  font-style: italic;
+}
+#home table .btn {
+  min-width: 60%;
+}

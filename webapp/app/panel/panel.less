@@ -1,0 +1,33 @@
+@brown: #2B1719;
+@green: #78AE62;
+@green_darker:#588745;
+@font_main_color: #222;
+
+#panel_page {
+  margin: 50px 0;
+  color: @font_main_color;
+  .container {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .btn-green{
+    border-color:@green_darker;
+    background:@green;
+    color:#fff;
+  }
+  .btn-green:hover,.btn-green:focus,.btn-green:active{
+    border-color:#4d763d;
+    background:@green_darker;
+  }
+  #list_of_all_books,#list_of_all_waiting{
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  #szukanie_ksiazki{
+    margin-bottom: 5px;
+  }
+  #szukanie_ksiazki_icon{
+    top:0;
+  }
+}

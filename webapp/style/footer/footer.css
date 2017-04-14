@@ -1,0 +1,13 @@
+/* variables */
+#footer {
+  background: #2b1719;
+  width:100%;
+  position: fixed;
+  bottom:0;
+}
+#footer .row {
+  text-align: center;
+  font-size: 9px;
+  padding: 10px 0;
+  color: #888888;
+}

@@ -1,0 +1,35 @@
+<div id="register_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-xs-8 col-xs-offset-2">
+                <form class="form-horizontal" ng-submit="vm.register_entered_data(entered_login,entered_password)">
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12">
+                            Login:
+                        </label>
+                        <div class="col-md-9 col-xs-12">
+                            <input class="form-control" type="text" placeholder="your login..." ng-model="entered_login"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-xs-12">
+                            Password:
+                        </label>
+                        <div class="col-md-9 col-xs-12">
+                            <input class="form-control" type="password" placeholder="your pass..." ng-model="entered_password"/>
+                        </div>
+                    </div>
+                    <div class="form-group" align="center">
+                        <button type="submit" class="btn btn-success">Register</button>
+                    </div>
+                </form>
+                <div class="alert alert-success" ng-show="vm.register_success">
+                    Success. Go to <a href="#/login">login</a>
+                </div>
+                <div class="alert alert-danger" ng-show="vm.register_error">
+                    Error. Try again.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+@brown: #2B1719;
+@green: #78AE62;
+@font_main_color: #222;
+
+#profile_page {
+  margin: 50px 0;
+  color: @font_main_color;
+  .container {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .user_name, .user_settings_btn {
+    margin-top: 15vh;
+    .h3 {
+      margin: 0;
+      color:@green;
+      text-shadow:1px 1px 5px lightgray;
+    }
+    @media screen and (max-width: 630px) {
+      margin-top: 10vh;
+    }
+    @media screen and (max-width: 500px) {
+      margin-top: 5vh;
+    }
+    @media screen and (max-width: 370px) {
+      margin-top: 2vh;
+    }
+  }
+
+}

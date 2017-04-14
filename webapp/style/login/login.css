@@ -1,0 +1,16 @@
+#login_page {
+  margin: 50px 0;
+  color: #222222;
+}
+#login_page .container {
+  padding: 50px 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#login_page form input:focus {
+  border-color: #78ae62;
+}
+#login_page label {
+  line-height: 34px;
+}

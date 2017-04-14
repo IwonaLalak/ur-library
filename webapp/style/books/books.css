@@ -1,0 +1,40 @@
+#books_page {
+  margin: 50px 0;
+  color: #222222;
+}
+#books_page .container {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#books_page #sterowanie_tabeli {
+  margin: 10px 0;
+}
+#books_page #sterowanie_tabeli #szukaj_ksiazki input:focus,
+#books_page #sterowanie_tabeli #sortuj_ksiazki input:focus,
+#books_page #sterowanie_tabeli #szukaj_ksiazki select:focus,
+#books_page #sterowanie_tabeli #sortuj_ksiazki select:focus {
+  border-color: #78ae62;
+}
+#books_page #sterowanie_tabeli #szukaj_ksiazki .glyphicon,
+#books_page #sterowanie_tabeli #sortuj_ksiazki .glyphicon {
+  top: 0;
+}
+#books_page table thead {
+  font-weight: bold;
+}
+#books_page table .wypozyczona_do {
+  font-size: 9px;
+  color: #999;
+  margin-left: 5px;
+  font-style: italic;
+}
+#books_page table .btn {
+  min-width: 60%;
+}
+#books_page .pager li a {
+  color: #78ae62;
+}
+#books_page .pager li.disabled a {
+  color: #aaa;
+}

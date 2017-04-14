@@ -1,0 +1,135 @@
+<div id="profile_page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="h2">
+                    Your account
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 col-xs-3">
+                <div class="thumbnail">
+                    <img src="../../images/default_avatar.jpg" class="img-responsive"/>
+                </div>
+            </div>
+            <div class="col-md-9 col-xs-7">
+                <div class="user_name">
+                    <div class="h3">
+                        {{vm.username}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 col-xs-2">
+                <div class="user_settings_btn">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                        <span class="glyphicon glyphicon-cog"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="h4">
+                    Now borrowed
+                </div>
+            </div>
+            <div class="col-md-12" ng-hide="vm.nowReadBooks.length==0">
+                <table class="table table-responsive">
+                    <thead>
+                    <tr>
+                        <td>Title</td>
+                        <td>Authors</td>
+                        <td>ISBN</td>
+                        <td>Until</td>
+                        <!--<td>Zwróć książkę</td>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="info in vm.nowReadBooks">
+                        <td>{{info.book.title}}</td>
+                        <td>{{info.book.authors}}</td>
+                        <td>{{info.book.numberIsbn}}</td>
+                        <td>{{info.endDate}}</td>
+                        <!--<td><button class="btn btn-info btn-sm" ng-click="vm.giveBookBack(info.book.bookId)">Zwróć</button></td>-->
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12" ng-show="vm.nowReadBooks.length==0">
+                <span class="text-warning">
+                    At the moment, there is currently no readed books
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="h4">
+                    Borrowed in past
+                </div>
+            </div>
+            <div class="col-md-12" ng-hide="vm.allBooks.length==0">
+                <table class="table table-responsive">
+                    <thead>
+                    <tr>
+                        <td>Title</td>
+                        <td>Authors</td>
+                        <td>ISBN</td>
+                        <td>When</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="rec in vm.allBooks">
+                        <td>{{rec.book['title']}}</td>
+                        <td>{{rec.book['authors']}}</td>
+                        <td>{{rec.book['numberIsbn']}}</td>
+                        <td>{{rec.endDate}}</td>
+                    </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+            <div class="col-md-12" ng-show="vm.allBooks.length==0">
+                <span class="text-warning ">
+                    There's no readed books
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Account Settings</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="h4">
+                                Change password
+                            </div>
+                            <form class="form-horizontal" ng-submit="vm.changePass(vm.userid,new_pass,vm.username)">
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control" placeholder="your new pass"
+                                           ng-model="new_pass"/>
+                                </div>
+                                <div class="col-md-3">
+                                    <button type="submit" class="btn btn-danger btn-block">
+                                        Change
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

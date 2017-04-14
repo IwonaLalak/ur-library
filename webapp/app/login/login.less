@@ -1,0 +1,21 @@
+@form_focus: #78AE62;
+@font_main_color:#222;
+
+#login_page {
+  margin:50px 0;
+  color:@font_main_color;
+  .container{
+    padding: 50px 0;
+    background: #fff;
+    border:1px solid #ddd;
+    border-radius: 4px;
+  }
+  form{
+    input:focus{
+      border-color:@form_focus;
+    }
+  }
+  label {
+    line-height: 34px;
+  }
+}
